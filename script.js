@@ -1,4 +1,3 @@
-// 導航欄滾動效果
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
@@ -8,7 +7,6 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// 平滑滾動
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -22,37 +20,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// 表單提交處理
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // 獲取表單數據
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value
-        };
-
-        // 這裡可以添加表單驗證邏輯
-        if (!formData.name || !formData.email || !formData.message) {
-            alert('請填寫所有必填欄位');
-            return;
-        }
-
-        // 這裡可以添加發送表單數據到服務器的邏輯
-        console.log('表單數據：', formData);
-        
-        // 顯示成功訊息
-        alert('感謝您的訊息！我們會盡快回覆您。');
-        
-        // 重置表單
-        contactForm.reset();
-    });
-}
-
-// 添加頁面載入動畫
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section');
     
@@ -75,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// 技能進度條動畫
+
 function animateSkills() {
     const skills = document.querySelectorAll('.skill-item');
     skills.forEach(skill => {
@@ -89,7 +56,7 @@ function animateSkills() {
     });
 }
 
-// 當技能區塊進入視圖時觸發動畫
+
 const skillsSection = document.querySelector('#skills');
 if (skillsSection) {
     const observer = new IntersectionObserver((entries) => {
@@ -106,7 +73,7 @@ if (skillsSection) {
     observer.observe(skillsSection);
 }
 
-// 平滑滚动到顶部
+
 document.querySelector('.back-to-top').addEventListener('click', function(e) {
     e.preventDefault();
     window.scrollTo({
